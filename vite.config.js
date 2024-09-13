@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dotenv from 'dotenv'
 import { json } from 'react-router-dom'
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,4 +12,5 @@ export default defineConfig({
   define: {
     'process.env.COIN_KEY': JSON.stringify(process.env.COIN_KEY),
   },
-})
+});
+
